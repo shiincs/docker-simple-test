@@ -11,6 +11,8 @@ CMD ["npm", "run", "build"]
 
 FROM nginx
 
+# nginx 포트 매핑
+EXPOSE 80
 # builder stage 로부터 파일 복사
 # /usr/src/app/build 디렉토리의 파일을
 # /usr/share/nginx/html 디렉토리에 복사해준다.
