@@ -14,3 +14,15 @@ script:
 
 after_success:
   - echo "Test success"
+
+deploy:
+  provider: elasticbeanstalk
+  region: 'ap-northeast-2'
+  app: 'docker-simple'
+  env: 'DockerSimple-env'
+  bucket_name: 'elasticbeanstalk-ap-northeast-2-053149737028'
+  bucket_path: 'docker-simple'
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_ACCESS_KEY
